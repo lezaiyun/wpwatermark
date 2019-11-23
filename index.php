@@ -11,7 +11,7 @@ require_once 'WaterMarkFunctions.php';
 
 
 define('WPWaterMark_BASEFOLDER', plugin_basename(dirname(__FILE__)));
-define('WPWaterMark_INDEXFILE', 'WPWaterMark/index.php');
+define('WPWaterMark_INDEXFILE', 'wpwatermark/index.php');
 define('WPWaterMark_VERSION', 0.1);
 register_activation_hook( __FILE__, 'wpwatermark_set_options' );
 add_filter( 'wp_handle_upload', 'wp_handle_upload_wpwatermark' );
