@@ -7,7 +7,7 @@ Donate link: https://www.laobuluo.com/donate/
 Tags:老部落,水印插件,wordpress水印插件,WPWaterMark
 Requires at least: 4.5.0
 Tested up to: 5.3
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,6 +55,10 @@ WPWaterMark，老部落轻水印插件，全网首个实现WordPress固定九宫
 * 3、解决满铺水印刷新问题，以及解决预览刷新问题。
 * 4、提交WordPress平台被退回要求整改几处问题
 * 5、WordPress审核有点不耐烦了，函数自定义居然很严格必须和插件名称一致
+
+= 1.1.3 =
+* 1、优化水印插件演示效果，实现刷新演示
+* 2、新增添加水印条件，设置超过多少宽度和高度才添加水印
 
 == Upgrade Notice ==
 * 

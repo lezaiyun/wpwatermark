@@ -23,6 +23,8 @@ function wpwatermark_setting_page() {
 		$wpwatermark_options['watermark_margin'] = (isset($_POST['watermark_margin'])) ? sanitize_text_field(trim(stripslashes($_POST['watermark_margin']))) : $wpwatermark_options['watermark_margin'];
 		$wpwatermark_options['watermark_diaphaneity'] = (isset($_POST['watermark_diaphaneity'])) ? sanitize_text_field(trim(stripslashes($_POST['watermark_diaphaneity']))) : $wpwatermark_options['watermark_diaphaneity'];
 		$wpwatermark_options['watermark_spacing'] = (isset($_POST['watermark_spacing'])) ? sanitize_text_field(trim(stripslashes($_POST['watermark_spacing']))) : $wpwatermark_options['watermark_spacing'];
+		$wpwatermark_options['watermark_min_width'] = (isset($_POST['watermark_min_width'])) ? sanitize_text_field(trim(stripslashes($_POST['watermark_min_width']))) : $wpwatermark_options['watermark_min_width'];
+		$wpwatermark_options['watermark_min_height'] = (isset($_POST['watermark_min_height'])) ? sanitize_text_field(trim(stripslashes($_POST['watermark_min_height']))) : $wpwatermark_options['watermark_min_height'];
 
 		if ( isset($_GET['_wpnonce']) && wp_verify_nonce($_GET['_wpnonce']) ) {
 			// 不管结果变没变，有提交则直接以提交的数据 wpwatermark_options
@@ -186,6 +188,11 @@ function wpwatermark_setting_page() {
                             水印边距
                             <label for="label3"></label>
                             <input name="watermark_spacing" type="text" id="label3" value="<?php echo esc_attr($wpwatermark_options['watermark_spacing']); ?>" size="20" /> px  （水印起始位置距离图片四周边距数值，建议30）
+                        </p>
+                        <hr>
+                        <p>
+                            加水印条件:
+                            宽度：<input name="watermark_min_width" type="text" value="<?php echo esc_attr($wpwatermark_options['watermark_min_width']); ?>" size="10" />px /  高度：<input name="watermark_min_height" type="text" value="<?php echo esc_attr($wpwatermark_options['watermark_min_height']); ?>" size="10" />px（自定义图片宽和高超过多少像素才加水印）
                         </p>
                     </td>
 
