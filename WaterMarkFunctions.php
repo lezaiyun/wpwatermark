@@ -232,22 +232,29 @@ function wpWaterMarkCreateImageWatermark( $img_url, $stamp_url, $newimgurl, $poi
 	$stampCreateFun = $imageCreateFunArr[$stampMime];
 	$im = $imCreateFun($img_url);
 	$stamp = $stampCreateFun($stamp_url);
+	$tcStamp = imagecreatetruecolor($stampWidth, $stampHeight);
 	$point = intval($point) >= 0 && intval($point) <= 10 ? intval($point) : 1;
 	if ( $point == 10  ) {
 		$x_length = $imWidth - $margin;
 		$y_length = $imHeight - $margin;
 		for  ($x = $margin; $x < $x_length; $x++ ) {
 			for ($y = $margin; $y < $y_length; $y++) {
-				imagecopymerge($im, $stamp, $x, $y, 0, 0, $stampWidth, $stampHeight, $pct);
+				imagecopy($tcStamp, $im, 0, 0, $x, $y, $stampWidth, $stampHeight);
+				imagecopy($tcStamp, $stamp, 0, 0, 0, 0, $stampWidth, $stampHeight);
+				imagecopymerge($im, $tcStamp, $x, $y, 0, 0, $stampWidth, $stampHeight, $pct);
 				$y += ($stampHeight + $watermark_margin);
 			}
 			$x += ($stampWidth + $watermark_margin);
 		}
 	} else {
 		$position = wpWaterMarkImageWatermarkPosition($point, $imWidth, $imHeight, $stampWidth, $stampHeight, $margin);
-		imagecopymerge($im, $stamp, $position['pointLeft'], $position['pointTop'], 0, 0, $stampWidth, $stampHeight, $pct);
+		imagecopy($tcStamp, $im, 0, 0, $position['pointLeft'], $position['pointTop'], $stampWidth, $stampHeight);
+		imagecopy($tcStamp, $stamp, 0, 0, 0, 0, $stampWidth, $stampHeight);
+		imagecopymerge($im, $tcStamp, $position['pointLeft'], $position['pointTop'], 0, 0, $stampWidth, $stampHeight, $pct);
 	}
 	if ( $imMime == 'image/jpeg' ) { $imOutputFun($im, $newimgurl, 100); } else { $imOutputFun($im, $newimgurl); }
 	imagedestroy($im);
+	imagedestroy($stamp);
+	imagedestroy($tcStamp);
 	return $newimgurl;
 }
