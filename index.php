@@ -4,7 +4,7 @@
  * Plugin URI: https://www.laobuluo.com/2770.html
  * Description: 全网首个实现WordPress固定九宫格、随机位置、满铺水印的插件之一，方便每一个站长实现不同水印效果，加强图片防盗能力。站长互助QQ群： <a href="https://jq.qq.com/?_wv=1027&k=5gBE7Pt" target="_blank"> <font color="red">594467847</font></a>
  * Author: 老部落（By:老赵）
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author URI: https://www.laobuluo.com
  */
 require_once 'WaterMarkFunctions.php';
