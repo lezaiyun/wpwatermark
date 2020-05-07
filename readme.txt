@@ -3,8 +3,8 @@ Contributors: laobuluo
 Donate link: https://www.laobuluo.com/donate/
 Tags:老部落,水印插件,wordpress水印插件,WPWaterMark
 Requires at least: 4.5.0
-Tested up to: 5.3.1
-Stable tag: 1.1.5
+Tested up to: 5.4.1
+Stable tag: 1.2.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,10 @@ WPWaterMark，老部落轻水印插件，全网首个实现WordPress固定九宫
 
 = 1.1.5 =
 * 1、更新插件支持插件文件夹自定义目录名称
+
+= 1.2.1 =
+* 1、更新前端设置
+* 2、兼容WP5.4.1测试
 
 == Upgrade Notice ==
 * 
